@@ -3,7 +3,6 @@ import Image from "next/image";
 import React from "react";
 
 const Features: React.FC<{ data: TFeatures[] }> = ({ data }) => {
-  console.log(data);
   return (
     <div className="flex md:flex-row flex-col-reverse">
       <div className="md:w-1/2 w-full ">
