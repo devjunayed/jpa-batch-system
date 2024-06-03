@@ -4,7 +4,7 @@ import QuestionCard from "./QuestionCard";
 
 const FAQ = () => {
   return (
-    <div className="mx-36 mt-16">
+    <div className="mx-10 md:mx-36 mt-16">
       <h1 className="text-[#FF5555]">FAQ</h1>
       <div className=" ">
         <h2 className="relative inline-block text-black font-bold text-xl md:text-4xl">
@@ -14,20 +14,52 @@ const FAQ = () => {
           </div>
         </h2>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4  mt-8">
-        {Array.from({ length: 6 }).map((_, index) => (
-          <div key={index} className="">
-            <QuestionCard
-              bgColor={`${
-                index + 1 === 1 || index + 1 === 4 || index + 1 === 5
-                  ? "#FF5555"
-                  : ""
-              }`}
-              title="the best financial accounting app ever!"
-              description="“Arcu at dictum sapien, mollis. Vulputate sit id accumsan, ultricies. In ultrices malesuada elit mauris."
-            />
-          </div>
-        ))}
+      <div className=" gap-4  mt-8">
+        <div
+          className="flex gap-4 md:flex-row flex-col
+         justify-between"
+        >
+          <QuestionCard
+            bgColor={"#FF5555"}
+            title="the best financial accounting app ever!"
+            description="“Arcu at dictum sapien, mollis. Vulputate sit id accumsan, ultricies. In ultrices malesuada elit mauris."
+          />
+          <QuestionCard
+            bgColor=""
+            title="the best financial accounting app ever!"
+            description="“Arcu at dictum sapien, mollis. Vulputate sit id accumsan, ultricies. In ultrices malesuada elit mauris."
+          />
+        </div>
+        <div
+          className="flex gap-4 md:flex-row flex-col-reverse
+         justify-between"
+        >
+          <QuestionCard
+            bgColor=""
+            title="the best financial accounting app ever!"
+            description="“Arcu at dictum sapien, mollis. Vulputate sit id accumsan, ultricies. In ultrices malesuada elit mauris."
+          />
+          <QuestionCard
+            bgColor={"#FF5555"}
+            title="the best financial accounting app ever!"
+            description="“Arcu at dictum sapien, mollis. Vulputate sit id accumsan, ultricies. In ultrices malesuada elit mauris."
+          />
+        </div>
+        <div
+          className="flex gap-4 md:flex-row flex-col
+         justify-between"
+        >
+          <QuestionCard
+            bgColor={"#FF5555"}
+            title="the best financial accounting app ever!"
+            description="“Arcu at dictum sapien, mollis. Vulputate sit id accumsan, ultricies. In ultrices malesuada elit mauris."
+          />
+          <QuestionCard
+            bgColor=""
+            title="the best financial accounting app ever!"
+            description="“Arcu at dictum sapien, mollis. Vulputate sit id accumsan, ultricies. In ultrices malesuada elit mauris."
+          />
+        </div>
       </div>
     </div>
   );

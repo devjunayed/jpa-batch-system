@@ -3,7 +3,7 @@ import React from "react";
 
 const Pricing: React.FC<{ data: TPricing[] }> = ({ data }) => {
   return (
-    <div className="my-10">
+    <div className="my-10 mx-10">
       <h1 className="text-xl md:text-3xl text-black text-center fotn-bold">
         Our Packages
       </h1>

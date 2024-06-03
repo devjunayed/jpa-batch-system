@@ -7,6 +7,8 @@ import Customizable from "@/components/Home/Customizable";
 import Testimonials from "@/components/Home/Testimonials";
 import Pricing from "@/components/Home/Pricing";
 import FAQ from "@/components/Home/FAQ/FAQ";
+import GetStarted from "@/components/Home/GetStarted";
+import Footer from "@/components/Home/Footer";
 
 async function fetchData(url: string): Promise<TUiData> {
   const res = await fetch(url);
@@ -17,12 +19,8 @@ async function fetchData(url: string): Promise<TUiData> {
   return data[0];
 }
 
-
-
-const Home: React.FC<TUiData> = async  () => {
-
+const Home: React.FC<TUiData> = async () => {
   const data = await fetchData(`${process.env.BASE_URL}/data.json`);
-
 
   return (
     <div className="relative overflow-hidden">
@@ -35,13 +33,15 @@ const Home: React.FC<TUiData> = async  () => {
         <Advantages />
         <Customizable />
         <Testimonials />
-        <Pricing data={data.pricing}/>
+        <Pricing data={data.pricing} />
         <FAQ />
+        <GetStarted />
+        <div className="mx-auto lg:w-[85vw]">
+          <Footer />
+        </div>
       </div>
     </div>
   );
 };
-
-
 
 export default Home;
