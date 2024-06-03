@@ -21,7 +21,7 @@ async function fetchData(url: string): Promise<TUiData> {
 }
 
 const Home = async () => {
-  const data = await fetchData(`${process.env.BASE_URL}/api/data`);
+  const data = await fetchData(`/api/data`);
 console.log(data);
   return (
     <div className="relative overflow-hidden">
