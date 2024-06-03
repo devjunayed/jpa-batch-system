@@ -1,4 +1,4 @@
-import { TUiData, TUiDataProps } from "@/interfaces/data.interface";
+import { TUiData } from "@/interfaces/data.interface";
 import Navbar from "@/components/common/Navbar";
 import Hero from "@/components/Home/Hero";
 import Features from "@/components/Home/Features";
