@@ -11,20 +11,30 @@ import GetStarted from "@/components/Home/GetStarted";
 import Footer from "@/components/Home/Footer";
 
 async function fetchData(url: string): Promise<TUiData> {
-  const res = await fetch(url);
-  const data = await res.json();
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
 
-  if (!res.ok) {
-    console.log(data)
-    throw new Error(`Failed to fetch data ${res.json()}`);
+    if (!res.ok) {
+      throw new Error(`Failed to fetch data: ${JSON.stringify(data)}`);
+    }
+
+    return data.data[0];
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    throw error;
   }
-
-  return data.data[0];
 }
 
 const Home = async () => {
-  const data = await fetchData(`${process.env.BASE_URL}/api/data`);
-  
+  let data: TUiData;
+  try {
+    data = await fetchData(`${process.env.NEXT_PUBLIC_BASE_URL}/api/data`);
+  } catch (error) {
+    // Render error page or fallback UI
+    return <div>Failed to load data.</div>;
+  }
+
   return (
     <div className="relative overflow-hidden">
       <div className="bg-cover bg-no-repeat min-w-screen min-h-screen">
