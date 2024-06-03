@@ -26,7 +26,7 @@ const Features: React.FC<{ data: TFeatures[] }> = ({ data }) => {
         <div className="my-4 space-y-4">
           {data.map((feature, index) => (
             <div key={index}>
-              <h3 className="text-black gap-2 font-bold md:justify-start justify-center  flex items-center">
+              <h3 className="mb-4 text-black gap-2 font-bold md:justify-start justify-center  flex items-center">
                 <div className="w-6 h-6 relative">
                   <Image
                     src={feature.icon}
