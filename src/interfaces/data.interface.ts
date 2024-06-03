@@ -1,49 +1,46 @@
-// Types for ctaButtons
+// Types for CTA buttons
 export type TCtaButtons = {
     text: string;
     link: string;
-}
-
-
-// Types for hero
-export type THero = {
+  };
+  
+  // Types for hero
+  export type THero = {
     headline: string;
-    subheading: string;
-    ctaButtons: TCtaButtons [];
-}
-
-
-
-// Types for features
-export type TFeatures = {
+    subheadline: string;
+    ctaButtons: TCtaButtons[];
+  };
+  
+  // Types for features
+  export type TFeatures = {
     title: string;
     description: string;
     icon: string;
-}
-
-
-// Types for testimonials
-export type TTestimonials = {
+  };
+  
+  // Types for testimonials
+  export type TTestimonials = {
     name: string;
     feedback: string;
-    avater: string;
-}
-
-// Types for priceing
-export type TPricing = {
+    avatar: string; // Corrected spelling from "avater" to "avatar"
+  };
+  
+  // Types for pricing
+  export type TPricing = {
     plan: string;
     price: string;
     features: string[];
-}
-
-// Types for ui data
- export type TUiData  = {
+  };
+  
+  // Types for UI data
+  export type TUiData = {
     hero: THero;
     features: TFeatures[];
     testimonials: TTestimonials[];
     pricing: TPricing[];
-}
-
-export type TUiDataProps = {
-    props: TUiData
-}
+  };
+  
+  // Correctly define the props type for the component
+  export type TUiDataProps = {
+    data: TUiData;
+  };

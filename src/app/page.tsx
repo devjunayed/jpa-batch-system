@@ -1,19 +1,22 @@
-import React from "react";
-import { TUiDataProps } from "@/interfaces/data.interface";
+import { TUiData, TUiDataProps } from "@/interfaces/data.interface";
 import Navbar from "@/components/common/Navbar";
 import Hero from "@/components/Home/Hero";
 
-async function fetchData(url: string) {
+async function fetchData(url: string): Promise<TUiData> {
   const res = await fetch(url);
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
-  return res.json();
+  const data: TUiData[] = await res.json();
+  return data[0];
 }
 
-const Home: React.FC<TUiDataProps> = async () => {
+
+
+const Home: React.FC<TUiData> = async  () => {
+
   const data = await fetchData(`${process.env.BASE_URL}/data.json`);
-  console.log(data);
+
 
   return (
     <div className="relative overflow-hidden">
@@ -21,10 +24,12 @@ const Home: React.FC<TUiDataProps> = async () => {
         <div className="mx-auto lg:w-[85vw]">
           <Navbar />
         </div>
-        <Hero />
+        <Hero data={data} />
       </div>
     </div>
   );
 };
+
+
 
 export default Home;
