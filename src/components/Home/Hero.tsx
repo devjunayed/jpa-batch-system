@@ -25,12 +25,20 @@ const Hero: React.FC<{ data: TUiData }> = ({ data }) => {
           <div className="flex gap-3 justify-center flex-wrap">
             {data.hero.ctaButtons.map((btn, index) => (
               <Link
-                className={`btn ${index === 0 ? "text-white" : "text-black bg-white border-none hover:bg-gray-100"}`}
+                className={`btn ${
+                  index === 0
+                    ? "text-white"
+                    : "text-black bg-white border-none hover:bg-gray-100"
+                }`}
                 key={index}
                 href={btn.link}
               >
                 {btn.text}
-                {index === 0 ? <IoMdCloudDownload /> : <IoIosArrowRoundForward />} 
+                {index === 0 ? (
+                  <IoMdCloudDownload />
+                ) : (
+                  <IoIosArrowRoundForward />
+                )}
               </Link>
             ))}
           </div>

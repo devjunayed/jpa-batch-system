@@ -1,6 +1,8 @@
 import { TUiData, TUiDataProps } from "@/interfaces/data.interface";
 import Navbar from "@/components/common/Navbar";
 import Hero from "@/components/Home/Hero";
+import Features from "@/components/Home/Features";
+import Advantages from "@/components/Home/Advantages";
 
 async function fetchData(url: string): Promise<TUiData> {
   const res = await fetch(url);
@@ -25,6 +27,8 @@ const Home: React.FC<TUiData> = async  () => {
           <Navbar />
         </div>
         <Hero data={data} />
+        <Features data={data.features} />
+        <Advantages />
       </div>
     </div>
   );
