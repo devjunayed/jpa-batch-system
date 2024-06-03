@@ -3,6 +3,7 @@ import Navbar from "@/components/common/Navbar";
 import Hero from "@/components/Home/Hero";
 import Features from "@/components/Home/Features";
 import Advantages from "@/components/Home/Advantages";
+import Customizable from "@/components/Home/Customizable";
 
 async function fetchData(url: string): Promise<TUiData> {
   const res = await fetch(url);
@@ -29,6 +30,7 @@ const Home: React.FC<TUiData> = async  () => {
         <Hero data={data} />
         <Features data={data.features} />
         <Advantages />
+        <Customizable />
       </div>
     </div>
   );
