@@ -15,7 +15,15 @@ const Features: React.FC<{ data: TFeatures[] }> = ({ data }) => {
           />
         </div>
       </div>
-      <div className="md:w-1/2 w-full my-4">
+      <div className="md:w-1/2 w-full my-4 relative">
+        <div className="absolute right-0 -top-20 w-[18vw] h-full">
+          <Image
+            src="/assets/features-bg-right.svg"
+            alt="Ribbon"
+            fill
+            style={{ objectFit: "contain" }}
+          />
+        </div>
         <h1 className="uppercase md:text-left text-center text-[#FF5555]">
           Features
         </h1>
