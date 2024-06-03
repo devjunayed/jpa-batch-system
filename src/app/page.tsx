@@ -19,6 +19,9 @@ async function fetchData(url: string): Promise<TUiData> {
   return data[0];
 }
 
+
+
+
 const Home = async () => {
   const data = await fetchData(`/data.json`);
 
