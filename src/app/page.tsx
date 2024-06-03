@@ -4,6 +4,7 @@ import Hero from "@/components/Home/Hero";
 import Features from "@/components/Home/Features";
 import Advantages from "@/components/Home/Advantages";
 import Customizable from "@/components/Home/Customizable";
+import Testimonials from "@/components/Home/Testimonials";
 
 async function fetchData(url: string): Promise<TUiData> {
   const res = await fetch(url);
@@ -31,6 +32,7 @@ const Home: React.FC<TUiData> = async  () => {
         <Features data={data.features} />
         <Advantages />
         <Customizable />
+        <Testimonials />
       </div>
     </div>
   );
