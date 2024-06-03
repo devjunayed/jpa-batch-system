@@ -15,13 +15,14 @@ async function fetchData(url: string): Promise<TUiData> {
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
-  const data: TUiData[] = await res.json();
-  return data[0];
+  const data = await res.json();
+
+  return data.data[0];
 }
 
 const Home = async () => {
-  const data = await fetchData(`${process.env.BASE_URL}/data.json`);
-
+  const data = await fetchData(`${process.env.BASE_URL}/api/data`);
+console.log(data);
   return (
     <div className="relative overflow-hidden">
       <div className="bg-cover bg-no-repeat min-w-screen min-h-screen">
